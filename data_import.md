@@ -152,3 +152,27 @@ Data summary
 | pups\_born\_alive |          0 |           1.00 |  7.35 | 1.76 |  3.0 |  6.00 |  8.00 |  8.00 | 11.0 | ▁▃▂▇▁ |
 | pups\_dead\_birth |          0 |           1.00 |  0.33 | 0.75 |  0.0 |  0.00 |  0.00 |  0.00 |  4.0 | ▇▂▁▁▁ |
 | pups\_survive     |          0 |           1.00 |  6.41 | 2.05 |  1.0 |  5.00 |  7.00 |  8.00 |  9.0 | ▁▃▂▇▇ |
+
+## Options for read\_csv
+
+``` r
+litters_df = read_csv("./data/FAS_litters.csv", skip = 10)
+```
+
+    ## Warning: Missing column names filled in: 'X4' [4]
+
+    ## Warning: Duplicated column names deduplicated: '8' => '8_1' [8]
+
+    ## Parsed with column specification:
+    ## cols(
+    ##   Con8 = col_character(),
+    ##   `#3/5/2/2/95` = col_character(),
+    ##   `28.5` = col_double(),
+    ##   X4 = col_double(),
+    ##   `20` = col_double(),
+    ##   `8` = col_double(),
+    ##   `0` = col_double(),
+    ##   `8_1` = col_double()
+    ## )
+
+check out `?read_csv` for more info.
