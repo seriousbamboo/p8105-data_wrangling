@@ -196,3 +196,11 @@ read in a sas file.
 ``` r
 pulse_df = read_sas("./data/public_pulse_data.sas7bdat")
 ```
+
+## Exporting data
+
+Export the mlb subtable
+
+``` r
+write_csv(mlb_df,"./data/mlb_subtable.csv")
+```
