@@ -94,3 +94,12 @@ litters_df =
   drop_na(gd0_weight)
 ```
 
+```{r}
+read_csv("./data/FAS_pups.csv") %>% 
+  janitor::clean_names() %>% 
+  select(.data = ., -pd_ears) %>% 
+  filter(.data = ., sex == 1) %>% 
+  mutate(.data = ., pd_pivot_GT7 = pd_pivot > 7)
+  
+```
+

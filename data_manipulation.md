@@ -365,3 +365,36 @@ litters_df =
     ##   `Pups dead @ birth` = col_double(),
     ##   `Pups survive` = col_double()
     ## )
+
+``` r
+read_csv("./data/FAS_pups.csv") %>% 
+  janitor::clean_names() %>% 
+  select(.data = ., -pd_ears) %>% 
+  filter(.data = ., sex == 1) %>% 
+  mutate(.data = ., pd_pivot_GT7 = pd_pivot > 7)
+```
+
+    ## Parsed with column specification:
+    ## cols(
+    ##   `Litter Number` = col_character(),
+    ##   Sex = col_double(),
+    ##   `PD ears` = col_double(),
+    ##   `PD eyes` = col_double(),
+    ##   `PD pivot` = col_double(),
+    ##   `PD walk` = col_double()
+    ## )
+
+    ## # A tibble: 155 x 6
+    ##    litter_number   sex pd_eyes pd_pivot pd_walk pd_pivot_GT7
+    ##    <chr>         <dbl>   <dbl>    <dbl>   <dbl> <lgl>       
+    ##  1 #85               1      13        7      11 FALSE       
+    ##  2 #85               1      13        7      12 FALSE       
+    ##  3 #1/2/95/2         1      13        7       9 FALSE       
+    ##  4 #1/2/95/2         1      13        8      10 TRUE        
+    ##  5 #5/5/3/83/3-3     1      13        8      10 TRUE        
+    ##  6 #5/5/3/83/3-3     1      14        6       9 FALSE       
+    ##  7 #5/4/2/95/2       1      14        5       9 FALSE       
+    ##  8 #4/2/95/3-3       1      13        6       8 FALSE       
+    ##  9 #4/2/95/3-3       1      13        7       9 FALSE       
+    ## 10 #2/2/95/3-2       1      NA        8      10 TRUE        
+    ## # ... with 145 more rows
