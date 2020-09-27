@@ -31,3 +31,9 @@ pulse_data_tidy =
 ```
 
 
+## `pivot wider example`
+
+```{r}
+
+```
+
